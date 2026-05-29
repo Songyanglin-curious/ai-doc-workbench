@@ -13,8 +13,9 @@ Existing audit skills cover document quality and plan/decision auditing, but non
 ### Decision
 
 - Added `docs/skills/index-routing-audit-prompt.md`
-- Updated `docs/skills/README.md` to register the new skill
 
 ### Rationale
+
+This change was made because routing quality is a recurring template risk: a copied project can have the right owner docs but still fail to guide agents and maintainers to the correct next artifact.
 
 Routing failures are often contextual: an index entry can be technically correct yet still fail a specific persona. A simple checklist misses this. The prompt uses three layers — coverage table, persona-based routing test, structural checks — so that mechanical correctness and contextual reachability are both evaluated.
