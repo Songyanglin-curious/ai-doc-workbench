@@ -34,6 +34,10 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 | `multi-dimensional-audit-prompt.md`       | high-risk work needs challenge across multiple dimensions at once                  | a single-object audit is already sufficient   | relevant requirement/owner docs, plan or changed area, verification evidence | findings grouped across dimensions             |
 | `open-ended-audit-prompt.md`              | hidden problems may exist outside the normal checklist                             | the work only needs a narrow structured audit | relevant requirement/owner docs, plan if any, logs, live changed code        | adversarial findings and unknown-risk notes    |
 | `index-routing-audit-prompt.md`          | a docs index or directory structure needs routing effectiveness review             | the index has no routing role or is trivial   | top-level index, sub-indexes, target files                                   | coverage table, persona test results, structural findings |
+| `bug-diagnosis-prompt.md`                 | a bug is real but the root cause is not yet proven                                | the defect is already obvious and local       | bug report, owner docs, reproduction path, verification command              | confirmed cause and proof path                 |
+| `code-quality-audit-prompt.md`            | reviewing code for behavioral risk and implementation quality                      | only formatting or trivial nits are needed    | changed files, owner docs, tests or verification evidence                    | severity-ordered findings                      |
+| `code-refactor-discovery-prompt.md`       | structural cleanup candidates need discovery before refactoring                    | the structural target is already agreed       | target area, owner docs, current code                                        | ranked refactor candidates                     |
+| `code-refactor-prompt.md`                 | behavior-preserving structural refactor work is the task                           | the task changes supported behavior           | target area, invariants, verification commands                               | safe refactor execution and proof              |
 
 ## Starter Skills
 
@@ -44,3 +48,7 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 - `multi-dimensional-audit-prompt.md`
 - `open-ended-audit-prompt.md`
 - `index-routing-audit-prompt.md`
+- `bug-diagnosis-prompt.md`
+- `code-quality-audit-prompt.md`
+- `code-refactor-discovery-prompt.md`
+- `code-refactor-prompt.md`
