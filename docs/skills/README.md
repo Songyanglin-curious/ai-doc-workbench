@@ -33,6 +33,7 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 | `requirement-gap-retrospective-prompt.md` | landed work still missed expectations and the requirement pipeline needs diagnosis | the requirement is still being drafted        | original input, requirement/discussion docs, delivered result                | retrospective findings and process corrections |
 | `multi-dimensional-audit-prompt.md`       | high-risk work needs challenge across multiple dimensions at once                  | a single-object audit is already sufficient   | relevant requirement/owner docs, plan or changed area, verification evidence | findings grouped across dimensions             |
 | `open-ended-audit-prompt.md`              | hidden problems may exist outside the normal checklist                             | the work only needs a narrow structured audit | relevant requirement/owner docs, plan if any, logs, live changed code        | adversarial findings and unknown-risk notes    |
+| `index-routing-audit-prompt.md`          | a docs index or directory structure needs routing effectiveness review             | the index has no routing role or is trivial   | top-level index, sub-indexes, target files                                   | coverage table, persona test results, structural findings |
 
 ## Starter Skills
 
@@ -42,3 +43,4 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 - `requirement-gap-retrospective-prompt.md`
 - `multi-dimensional-audit-prompt.md`
 - `open-ended-audit-prompt.md`
+- `index-routing-audit-prompt.md`
