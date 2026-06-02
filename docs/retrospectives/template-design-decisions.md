@@ -4,6 +4,29 @@ Each entry has Context, Decision, Rationale, and Consequences. Omit a section on
 
 ---
 
+## 2026-06-02: Strengthen Mandatory Log Recording Rules
+
+### Context
+
+The template had `docs/logs/` and `00-log-writing-guide.md`, but AGENTS.md only said "Keep logs short, dated, and append-only" without a mandatory trigger. In practice (nop-chaos-flux), the AI never wrote logs because no condition forced it. nop-chaos-flux had to add its own "Docs Maintenance" section with explicit mandatory triggers, a verification checklist, and a full-green baseline recording rule.
+
+### Decision
+
+- Updated AGENTS.md Operating Rule 7: added mandatory trigger "After completing any significant code change, you MUST update the daily dev log"
+- Added `Docs Maintenance` section to AGENTS.md with two mandatory items (log update + owner doc update) and a full-green baseline recording rule
+- Expanded `docs/logs/00-log-writing-guide.md` from a 19-line skeleton to a full guide with Purpose, Rules (6 items), Path Convention, Entry Format example, and step-by-step Adding A New Entry instructions
+- Added log directory initialization step to `START-HERE-after-copy.md` Required checklist
+
+### Rationale
+
+Without a mandatory trigger and concrete format guide, the log rule was invisible to AI agents. The template had the directory structure and a placeholder guide, but neither AGENTS.md nor the guide told agents when or how to write entries. nop-chaos-flux proved that a "Docs Maintenance" section with MUST-level triggers and a full-green recording rule makes log recording actually happen.
+
+### Consequences
+
+Copied projects will have enforceable log rules from the start. The expanded `00-log-writing-guide.md` provides enough format detail that agents can write well-structured entries without guessing. The START-HERE checklist ensures the log directory structure is ready before the first coding session.
+
+---
+
 ## 2026-05-29: Add Reusable Engineering Skills And Optional Tools Workspace
 
 ### Context
