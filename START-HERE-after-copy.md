@@ -17,6 +17,7 @@ Do this before asking AI to implement features.
 - [ ] Ensure the active requirement has concrete acceptance criteria.
 - [ ] Choose the first active owner doc and record it in `docs/context/project-context.md`.
 - [ ] Ensure verification commands are real commands for this repository.
+- [ ] Create `docs/logs/{year}/` directory for the current year (e.g. `docs/logs/2026/`). See `docs/logs/00-log-writing-guide.md` for log conventions.
 
 For a direct local low-risk edit, do not block on a polished backlog or codebase map if the active requirement/owner-doc meaning is obvious and verification commands are real. Protected areas, stale docs, missing verification, or unclear user-visible behavior still block coding.
 
