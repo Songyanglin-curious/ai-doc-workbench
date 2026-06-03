@@ -283,3 +283,13 @@ The full workflow is documented in `docs/process/application-development-workflo
 ## License
 
 MIT
+
+## 作者微信和微信讨论群
+
+![](https://gitee.com/canonical-entropy/nop-entropy/raw/master/wechat-group.png)
+
+添加微信时请注明：加入Nop平台群
+
+## 微信公众号
+
+![](https://gitee.com/canonical-entropy/nop-entropy/raw/master/wechat-public-account.jpg)
