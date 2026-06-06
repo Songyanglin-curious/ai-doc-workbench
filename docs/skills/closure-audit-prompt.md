@@ -11,6 +11,8 @@ Audit whether the claimed implementation is truly closed.
 
 Check `docs/context/ai-autonomy-policy.md` reviewer availability. Cold replay is not a second reviewer and never approves protected areas, unresolved product risk, or source-of-truth conflicts.
 
+This audit must be run by an independent subagent or reviewer, not the implementing agent continuing the same closure decision.
+
 Focus on:
 - whether live behavior matches the stated requirement
 - whether the plan's closure gates are actually satisfied
@@ -23,5 +25,5 @@ Focus on:
 
 Return findings first, ordered by severity.
 If closure is blocked, say `needs revision` and list the exact missing proof or changes.
-If the slice is acceptable, say `passes closure audit` and note any residual risks.
+If the slice is acceptable, say `passes closure audit` and note any residual risks. The closure result must leave durable evidence in the plan `## Closure` section, with optional links to the daily log or a stored audit file. Do not approve closure based on self-recorded evidence from the implementing agent alone.
 ```

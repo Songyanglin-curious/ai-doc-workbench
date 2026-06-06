@@ -33,7 +33,7 @@ This file is the top-level docs router.
 | Understand the current technical baseline                            | `docs/architecture/system-baseline.md`              | `docs/architecture/module-boundaries.md`                                                                                                       |
 | Understand owner-doc precedence and source-of-truth boundaries       | `docs/context/source-of-truth-and-precedence.md`    | the relevant owner doc                                                                                                                         |
 | Start or review a non-trivial implementation                         | `AGENTS.md`                                         | `docs/skills/README.md`, `docs/plans/00-plan-authoring-and-execution-guide.md`, the active plan, and `docs/audits/00-audit-execution-guide.md` |
-| Review audit workflows or required plan/closure audits               | `docs/audits/00-audit-execution-guide.md`           | the relevant prompt in `docs/skills/`                                                                                                          |
+| Review audit workflows or required draft-review/closure-audit rules  | `docs/audits/00-audit-execution-guide.md`           | the relevant prompt in `docs/skills/`                                                                                                          |
 | Understand which docs should use dated filenames versus stable names | `docs/references/document-naming-and-timeliness.md` | the relevant guide in the target directory                                                                                                     |
 | Quickly copy a recommended filename pattern for a new dated document | `docs/references/document-naming-and-timeliness.md` | the `Quick Copy Set` section                                                                                                                   |
 | Copy a ready-made dated document skeleton                            | `docs/examples/README.md`                           | rename the closest `.example.md` file                                                                                                          |
@@ -60,7 +60,7 @@ For most small and medium projects, the default path is:
 5. `docs/design/` and `docs/architecture/`
 6. route the task and select candidate reusable skills
 7. `docs/plans/` when planning triggers apply
-8. `docs/audits/` for required plan/closure audits or stored audit evidence
+8. `docs/audits/` for audit workflow guidance or stored non-trivial audit records
 9. `docs/logs/`
 10. `docs/bugs/` when needed
 
@@ -92,7 +92,7 @@ Skills select the work method. They do not replace requirements, design, archite
 - `docs/articles/` - outward-facing methodology and explanatory articles
 - `docs/examples/` - small copyable skeletons for dated working documents
 - `docs/plans/` - execution plans with closure criteria
-- `docs/audits/` - audit methods and audit records, including required plan/closure audit evidence for created plans
+- `docs/audits/` - audit methods and optional stored audit records
 - `docs/skills/` - optional reusable AI prompts and audit/review playbooks
 - `docs/logs/` - dated implementation memory
 - `docs/testing/` - optional exploratory and manual testing notes

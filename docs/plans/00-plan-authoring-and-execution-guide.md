@@ -19,11 +19,11 @@ Skip a formal plan only for local low-risk edits such as copy changes, small sty
 
 ## Plan Decision Table
 
-| Scope                                                                                                                               | Plan Level | Audit Rule                                                    | Examples                                                                               |
-| ----------------------------------------------------------------------------------------------------------------------------------- | ---------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| Trivial local edit                                                                                                                  | No plan    | No plan audit                                                 | typo/copy change, single style tweak, test-only cleanup                                |
-| Non-trivial tracked work                                                                                                            | Full plan  | independent plan audit and independent closure audit required | small UI polish with docs/test update, simple local bug fix with clear existing test   |
-| Contract, data/model, API, auth, permission, integration, deployment, cross-surface, stale-doc conflict, or clearly high-risk scope | Full plan  | independent plan audit and independent closure audit required | checkout flow, login behavior, data migration, external webhook, multi-module refactor |
+| Scope                                                                                                                               | Plan Level | Audit Rule                                                      | Examples                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ---------- | --------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Trivial local edit                                                                                                                  | No plan    | No draft review                                                 | typo/copy change, single style tweak, test-only cleanup                                |
+| Non-trivial tracked work                                                                                                            | Full plan  | independent draft review and independent closure audit required | small UI polish with docs/test update, simple local bug fix with clear existing test   |
+| Contract, data/model, API, auth, permission, integration, deployment, cross-surface, stale-doc conflict, or clearly high-risk scope | Full plan  | independent draft review and independent closure audit required | checkout flow, login behavior, data migration, external webhook, multi-module refactor |
 
 If unsure, use a full plan.
 
@@ -40,8 +40,28 @@ If unsure, use a full plan.
 9. **Record Decisions with rationale.** Every `Decision` item must document the choice, the alternatives considered, and the residual risk if any. Write the rationale into the plan or a referenced doc. If a decision requires prototyping or exploration before committing, add a temporary `Explore` item that must conclude before the `Decision` resolves. Framework-forced or obvious choices (e.g., "must match existing framework pattern") can be noted as constrained without full alternatives analysis.
 10. **Checklist integrity before closure.** Before marking a plan complete, no in-scope checklist item may remain unchecked. Either complete it or explicitly move it out of scope with a written reason. Scope narrowing after plan approval is a scope change and must be recorded with rationale; silently removing items from scope is a violation.
 11. **Text consistency before closure.** Before closing, verify that `Plan Status`, every phase `Status`, every phase `Exit Criteria`, `Closure Gates`, and the `docs/logs/` entry all agree. No `completed` at the top while a phase inside still says `planned`.
-12. **Independent plan and closure audit.** Do not implement a created plan until it has passed plan audit, and do not mark it complete as a side effect of finishing the last implementation slice. Use a separate review pass. Protected areas, unresolved product risk, and source-of-truth conflicts require human/subagent review or stay open.
+12. **Independent draft review and closure audit.** Do not implement a created plan until independent draft review has revised it into an acceptable execution contract, and do not mark it complete as a side effect of finishing the last implementation slice. Use a separate review pass. Closure audit must be performed by an independent subagent or reviewer; self-review cannot mark a created plan complete. Protected areas, unresolved product risk, and source-of-truth conflicts require human/subagent review or stay open.
 13. **Non-degradable items** cannot be downgraded to non-blocking follow-ups: confirmed live defects, confirmed contract drift, confirmed owner-doc drift, and CI/lint rules already fixed in the repo.
+
+## Plan Status Flow
+
+Use these statuses deliberately:
+
+- `proposed` - the initial draft exists but has not yet passed independent draft review
+- `planned` - independent draft review has converged on an acceptable execution contract and implementation may begin
+- `in progress` - implementation is underway
+- `partially completed` - some in-scope work landed but closure is not yet honest
+- `completed` - independent closure audit accepted closure
+- `superseded | replaced | deferred | cancelled` - use when the plan no longer owns live closure in its original form
+
+Recommended default flow for created plans:
+
+1. create the first honest draft as `proposed`
+2. run independent draft review until the draft is acceptable
+3. record the iterations in `## Draft Review Record`
+4. change `Plan Status` to `planned`
+5. execute and update phase/workstream statuses
+6. close only after independent closure audit
 
 ### Anti-Slacking Rule
 
@@ -53,14 +73,15 @@ A `Follow-up` item must name the trigger condition that would promote it into sc
 
 ## When Executing
 
-1. Before implementation, record plan audit evidence.
-2. When you start a slice, update its `Status` to `in progress`.
-3. When you finish a slice, update its `Status` to `completed` and check off all its execution items and exit criteria.
-4. Before executing a phase, confirm the listed `Skill` still matches the task and available inputs. If not, update the plan before proceeding.
-5. If a slice changes the live baseline or public contract, its exit criteria must include the doc-update step. If no doc update is needed, write `No owner-doc update required` explicitly.
-6. Do not mark a slice complete because the function signature exists. Verify that the behavior, error handling, and test coverage land too.
-7. If an item cannot be completed, move it to `Deferred But Adjudicated` with classification and reason. Do not leave it unchecked in the execution list.
-8. Keep `docs/logs/` in sync with plan progress. A single aggregate log entry at plan closure is sufficient when all phases cover the same feature in one sprint; individual phase entries are required only when a phase spans a different day or a distinct deliverable.
+1. Before implementation, revise the plan directly until independent draft review finds no blocking issue, then record the draft-review evidence durably in the plan by default.
+2. Keep new plans at `Plan Status: proposed` during draft review. Change to `planned` only after the draft-review record shows the plan is acceptable for execution.
+3. When you start a slice, update its `Status` to `in progress`.
+4. When you finish a slice, update its `Status` to `completed` and check off all its execution items and exit criteria.
+5. Before executing a phase, confirm the listed `Skill` still matches the task and available inputs. If not, update the plan before proceeding.
+6. If a slice changes the live baseline or public contract, its exit criteria must include the doc-update step. If no doc update is needed, write `No owner-doc update required` explicitly.
+7. Do not mark a slice complete because the function signature exists. Verify that the behavior, error handling, and test coverage land too.
+8. If an item cannot be completed, move it to `Deferred But Adjudicated` with classification and reason. Do not leave it unchecked in the execution list.
+9. Keep `docs/logs/` in sync with plan progress. A single aggregate log entry at plan closure is sufficient when all phases cover the same feature in one sprint; individual phase entries are required only when a phase spans a different day or a distinct deliverable.
 
 ## When Closing
 
@@ -73,12 +94,12 @@ Before setting `Plan Status: completed`, do all of the following:
 3. Verify text consistency: top status, phase statuses, exit criteria, closure gates, and log entry all agree.
 4. Distinguish "interface exists" from "behavior is complete". Verify the actual runtime behavior with a test or demo, not just the type signature.
 5. Run the real verification commands for the repo. For plans whose primary result surface is visual, behavioral, or UX-driven, customize the verification gates with explicit justification in the plan.
-6. Perform an independent closure audit.
+6. Perform an independent closure audit by an independent subagent or reviewer.
 
 **Full closure** (multi-session, multi-module, or high-risk plans — add these):
 
 7. Re-read the entire plan from the top, not just the most recent slice.
-8. Record independent audit evidence in the plan's `Closure` section and link any stored audit file under `docs/audits/`.
+8. Record independent closure-audit evidence in the plan's `Closure` section and link any stored audit file under `docs/audits/` when one exists.
 
 If any of these fail, the plan stays open.
 
@@ -87,7 +108,7 @@ If any of these fail, the plan stays open.
 ```md
 # <plan-id> <title>
 
-> Plan Status: planned
+> Plan Status: proposed
 > Last Reviewed: YYYY-MM-DD
 > Source: <requirement / bug / analysis / request>
 > Related: <related plans, optional>
@@ -142,11 +163,10 @@ Exit Criteria:
 - [ ] <relevant docs updated, or No owner-doc update required>
 - [ ] `docs/logs/` updated
 
-## Plan Audit
+## Draft Review Record
 
-- Status: <pending | passed>
-- Reviewer / Agent: <independent reviewer, subagent, or cold-replay proxy>
-- Evidence: <task id / audit file>
+- Independent draft review iteration 1: <needs revision | acceptable as-is | accept> (<task/session id>) because <why>
+- Independent draft review iteration 2: <needs revision | acceptable as-is | accept> (<task/session id>) after <what changed>
 
 ## Closure Gates
 
@@ -154,7 +174,7 @@ Exit Criteria:
 - [ ] relevant docs are aligned
 - [ ] verification has run (specify which commands; customize for visual/UX domains if needed)
 - [ ] no in-scope item downgraded to deferred/follow-up
-- [ ] plan audit passed before implementation
+- [ ] independent draft review completed and recorded
 - [ ] text consistency verified: status, phases, gates, and log all agree
 - [ ] closure audit was independent
 - [ ] closure evidence exists in files
@@ -173,7 +193,7 @@ Status Note: <why the plan can close>
 
 Closure Audit Evidence:
 
-- Reviewer / Agent: <independent reviewer or cold-replay proxy>
+- Reviewer / Agent: <independent reviewer or independent subagent>
 - Evidence: <task id / log link / walkthrough record>
 
 Follow-up:

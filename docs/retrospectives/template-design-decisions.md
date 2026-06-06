@@ -2,6 +2,35 @@
 
 Each entry has Context, Decision, Rationale, and Consequences. Omit a section only when its content is obvious from the others. New entries go above the line.
 
+This file is the template evolution record for stable reusable changes.
+
+- Record here only when the template's reusable guides, examples, or default rules changed.
+- Do not record session-by-session execution detail here.
+- Do not record temporary experiments that did not become stable template guidance.
+
+---
+
+## 2026-06-07: Converge Plan Workflow Toward Nop-Chaos-Flux Practice
+
+### Context
+
+The template had already introduced independent draft review and closure audit, but the plan workflow was still heavier and less consistent than `nop-chaos-flux` in two places. It still resembled a formal `Plan Audit`-style contract instead of a revise-the-plan loop, and the plan lifecycle details were spread across multiple files instead of being owned mainly by the plan guide.
+
+### Decision
+
+- Kept `Draft Review Record` in plans, but changed it to a lightweight iteration record instead of a formal `Plan Audit` block
+- Updated the plan guide so created plans normally start as `Plan Status: proposed`, move to `planned` only after independent draft review converges, and close only after independent closure audit
+- Slimmed `AGENTS.md` so it points plan work to `docs/plans/00-plan-authoring-and-execution-guide.md` instead of repeating most plan-state details
+- Updated examples to show `proposed` plus iteration-style `Draft Review Record`
+
+### Rationale
+
+This change makes the template closer to `nop-chaos-flux`'s real practice: the plan guide owns the detailed execution contract, draft review improves the plan directly, and closure remains independently audited. That is more compatible with AGE because it preserves durable reasoning where it matters without turning plan review into extra process theater.
+
+### Consequences
+
+Copied projects get a clearer default plan lifecycle: `proposed -> planned -> in progress -> completed`, with visible independent draft-review iterations and independent closure evidence. The template also becomes easier to maintain because plan-specific detail is concentrated in one controlling guide instead of repeated across top-level docs.
+
 ---
 
 ## 2026-06-02: Strengthen Mandatory Log Recording Rules

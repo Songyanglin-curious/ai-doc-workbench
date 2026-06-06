@@ -2,7 +2,7 @@
 
 > Target Filename: `docs/plans/2026-05-21-user-list-plan.md`
 
-> Plan Status: planned
+> Plan Status: proposed
 > Last Reviewed: 2026-05-21
 > Source: `docs/requirements/2026-05-21-user-management.md`
 > Audit: required
@@ -52,11 +52,10 @@ Exit Criteria:
 - [ ] docs updated or `No owner-doc update required`
 - [ ] `docs/logs/` updated
 
-## Plan Audit
+## Draft Review Record
 
-- Status: pending
-- Reviewer / Agent: `<independent reviewer or subagent>`
-- Evidence: `<audit file or task id>`
+- Independent draft review iteration 1: `needs revision` (`<task/session id>`) because `<why the first draft is not yet honest>`
+- Independent draft review iteration 2: `accept` (`<task/session id>`) after `<what changed in the plan>`
 
 ## Closure Gates
 
@@ -64,7 +63,7 @@ Exit Criteria:
 - [ ] relevant docs are aligned
 - [ ] verification has run (specify which commands; customize for visual/UX domains if needed)
 - [ ] no in-scope item downgraded to deferred/follow-up
-- [ ] plan audit passed before implementation
+- [ ] independent draft review completed and recorded
 - [ ] text consistency verified: status, phases, gates, and log all agree
 - [ ] closure audit was independent
 - [ ] closure evidence exists in files
@@ -84,7 +83,9 @@ Status Note: <why the plan can close>
 Closure Audit Evidence:
 
 - Reviewer / Agent: `<independent reviewer or subagent>`
-- Evidence: `<task id / log link / audit file>`
+- Evidence: `<task id / log link / concise findings note>`
+
+Do not replace this with self-recorded closure notes from the implementing agent.
 
 Follow-up:
 

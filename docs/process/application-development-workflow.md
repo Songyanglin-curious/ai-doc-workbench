@@ -25,7 +25,7 @@ For most small and medium app projects, use this path:
 5. `design`
 6. `task routing and skill selection`
 7. `plan` when planning triggers apply
-8. `plan audit` for created plans
+8. `draft review` for created plans
 9. `implementation`
 10. `verification`
 11. `closure audit` for created plans
@@ -42,7 +42,7 @@ These are available but not mandatory for every task:
 3. `retrospective`
 4. `skill extraction`
 
-Plan audit and closure audit are not optional for created plans.
+Independent draft review and closure audit are not optional for created plans.
 
 ## Stage 0 - Read Context
 
@@ -77,7 +77,7 @@ After drafting substantial design documents, use an independent subagent or revi
 
 Write `docs/plans/` from the settled design baseline, not from raw source material alone.
 
-After drafting a plan, use an independent subagent or reviewer pass and revise until major objections are resolved.
+After drafting a plan, use an independent subagent or reviewer pass and revise the plan directly until major objections are resolved.
 
 ### C. Audit Periodically
 
@@ -206,7 +206,7 @@ The audit should test:
 
 If the audit finds blocking issues, revise the plan and repeat the audit until no major objection remains.
 
-If structured plan or closure audits repeatedly miss important issues, escalate with `multi-dimensional-audit-prompt.md` or `open-ended-audit-prompt.md` instead of repeating the same narrow audit forever.
+If structured draft review or closure audit repeatedly misses important issues, escalate with `multi-dimensional-audit-prompt.md` or `open-ended-audit-prompt.md` instead of repeating the same narrow review forever.
 
 ## Stage 9 - Implement Small Complete Slices
 
@@ -243,7 +243,7 @@ Closure requires an independent re-check against:
 - verification results
 - stated closure gates
 
-If the plan is not really closed, keep it open.
+If the plan is not really closed, keep it open. Self-review or self-recorded closure notes do not replace this independent closure pass.
 
 ## Stage 12 - Retrospective When Needed
 

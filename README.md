@@ -109,7 +109,7 @@ The template was simplified through several review passes:
 5. Move mandatory AI context out of `docs/references/` into `docs/context/`, because agents do not reliably read reference material unless it is part of the entry path.
 6. Add explicit AI autonomy, backlog, codebase map, and known-good baseline hooks so AI can choose safe next actions without rediscovering the repo every session.
 7. Keep advanced layers such as retrospectives, skills, testing notes, and analysis optional so the template remains usable for small and medium projects.
-8. Require plan audit and closure audit for created plans.
+8. Require independent draft review and closure audit for created plans.
 9. Make skill selection explicit in plans so reusable skills do not replace project-specific routing.
 
 Independent review found the template direction useful but warned about two risks: documentation theater and excessive process. The current version addresses those risks by keeping a lean default path and making optional layers explicit.
@@ -144,7 +144,7 @@ This template turns the repo into a durable execution surface with a lean defaul
 7. verification
 8. closure
 
-For created plans, plan audit and closure audit are part of the default control loop. For more ambiguous or risky work, the template also provides optional document audit, multi-dimensional audit, open-ended audit, retrospective, skill-extraction, and lesson layers.
+For created plans, independent draft review and closure audit are part of the default control loop. See `docs/plans/00-plan-authoring-and-execution-guide.md` for the detailed status flow, draft-review record format, and closure rules. For more ambiguous or risky work, the template also provides optional document audit, multi-dimensional audit, open-ended audit, retrospective, skill-extraction, and lesson layers.
 
 ## What This Template Includes
 
@@ -162,7 +162,7 @@ For created plans, plan audit and closure audit are part of the default control 
 - `docs/architecture/` - cross-cutting technical baseline and module boundaries
 - `docs/lessons/` - durable lessons extracted from repeated failures and recoveries
 - `docs/plans/` - execution plans with closure rules and skill selection records
-- `docs/audits/` - audit records and audit workflow guidance, including required plan/closure audit evidence for created plans
+- `docs/audits/` - audit workflow guidance and optional stored audit records for non-trivial or reusable review results
 - `docs/skills/` - optional reusable prompts, review playbooks, and audit prompt templates; copied projects should tune them to local owner docs and risk areas
 - `docs/logs/` - daily development log guide and starter index
 - `docs/testing/` - manual and automated testing note guides
@@ -188,13 +188,13 @@ For most small and medium projects, you only need these to start coding the firs
 Trigger-based folders:
 
 - `docs/plans/` when the planning triggers apply
-- `docs/audits/` when plan or closure audit evidence should be stored
+- `docs/audits/` when a non-trivial or reusable audit record should be stored
 - `docs/logs/` when a real change lands
 - `docs/testing/` when manual or exploratory proof matters
 - `docs/bugs/` when a non-obvious bug is fixed or needs memory
 - `docs/skills/` when a repeatable method is stable enough to reuse
 
-Created plans require plan audit before implementation and closure audit before completion.
+Created plans require independent draft review before implementation and independent closure audit before completion. The detailed workflow lives in `docs/plans/00-plan-authoring-and-execution-guide.md`.
 
 Everything else is optional and should be used only when the project complexity justifies it.
 
@@ -255,7 +255,7 @@ Do not push important work through chat alone.
 
 Use these only when needed:
 
-- `docs/audits/` for document audits and stored plan or closure audit records
+- `docs/audits/` for document audits and non-trivial stored audit records
 - `docs/testing/` for manual or exploratory proof
 - `docs/retrospectives/` when prototype and implementation diverged materially
 - `docs/skills/` when the same method repeats often enough to justify a reusable prompt

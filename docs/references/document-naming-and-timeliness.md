@@ -87,6 +87,8 @@ Examples:
 - `docs/audits/2026-05-21-document-audit-user-management.md`
 - `docs/audits/2026-05-21-closure-audit-order-list.md`
 
+Use `docs/audits/` only when the stored audit record is non-trivial, disputed, reusable, or likely to matter later. Created-plan draft review normally stays in the plan body, and closure evidence normally stays in the plan `## Closure` section.
+
 ### Retrospectives
 
 - `docs/retrospectives/YYYY-MM-DD-topic.md`

@@ -47,7 +47,7 @@ Review:
 - `docs/logs/YYYY/MM-DD.md`
 - `docs/testing/` if exploratory/manual proof was needed
 
-Created plans require plan audit before implementation and closure audit before completion.
+Created plans require independent draft review before implementation and closure audit before completion.
 
 ### Subtle Regression Or Root Cause Discovery
 

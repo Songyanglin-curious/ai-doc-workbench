@@ -27,6 +27,7 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 
 | Skill                                     | Use when                                                                           | Do not use when                               | Required inputs                                                              | Expected output                                |
 | ----------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------- |
+| `age-practice-gap-audit-prompt.md`        | a repo needs comparison between live practice and intended AGE workflow            | the task is a local feature implementation    | AGE baseline docs, current repo structure, active docs, sampled live evidence | analysis note under `docs/analysis/` with prioritized gaps |
 | `document-audit-prompt.md`                | requirement, design, or architecture docs may be incomplete or inconsistent        | the task is trivial and local                 | target doc paths, relevant input or owner docs                               | audit findings and revision targets            |
 | `plan-audit-prompt.md`                    | a non-trivial plan is ready for challenge before implementation                    | no plan exists yet                            | plan file, related requirement and owner docs                                | pass/fail audit with concrete issues           |
 | `closure-audit-prompt.md`                 | implementation claims completion and needs independent closure review              | work is still mid-flight                      | plan, verification evidence, relevant changed docs                           | closure verdict and remaining gaps             |
@@ -41,6 +42,7 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 
 ## Starter Skills
 
+- `age-practice-gap-audit-prompt.md`
 - `document-audit-prompt.md`
 - `plan-audit-prompt.md`
 - `closure-audit-prompt.md`

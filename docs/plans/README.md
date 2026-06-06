@@ -8,7 +8,7 @@ Use this directory for non-trivial implementation plans.
 - for small and medium projects, prefer `docs/plans/YYYY-MM-DD-topic-plan.md`
 - if the plan count grows large, a numeric prefix such as `NNN-YYYY-MM-DD-topic-plan.md` is acceptable
 
-Every created plan requires plan audit before implementation and closure audit before completion.
+Every created plan requires independent draft review before implementation and independent closure audit before completion. Self-review is not enough to close a created plan.
 
 Recommended filenames:
 

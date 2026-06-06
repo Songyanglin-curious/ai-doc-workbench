@@ -49,7 +49,7 @@ Do not jump from a feature request directly to code unless the route is already 
 8. Record non-obvious regressions in `docs/bugs/`.
 9. If prototype and implementation diverge materially, capture the reason in `docs/retrospectives/` instead of silently moving on.
 10. Promote repeated process lessons into `docs/skills/` or `docs/audits/` only when the pattern is recurring enough to justify reuse.
-11. For high-risk or high-ambiguity requirement, design, or plan drafts, request an independent subagent or reviewer pass and revise until major objections are resolved. Every created plan MUST pass an independent plan audit before implementation begins and an independent closure audit before being marked complete.
+11. When creating, revising, executing, or auditing a file under `docs/plans/`, read `docs/plans/00-plan-authoring-and-execution-guide.md` first and follow it as the controlling workflow.
 12. Keep code comments minimal. Prefer self-explanatory code; add only rare comments when a local constraint is otherwise easy to misread.
 13. When a referenced file is not found at its expected path, check `docs/archive/` before concluding it does not exist. Archived files retain their original relative name under `docs/archive/`. Do not move files to `docs/archive/` without human approval.
 14. Treat reusable skills as method selectors, not substitutes for requirements, design, or architecture docs. Business knowledge belongs in owner docs first.
@@ -107,7 +107,7 @@ Read additionally when needed:
 
 Use these when warranted by task complexity. Plan and closure audits are mandatory for created plans.
 
-- `docs/audits/` for document audits and plan/closure audit evidence
+- `docs/audits/` for document audits and non-trivial stored audit records
 - `docs/testing/` for manual or exploratory proof
 - `docs/retrospectives/` for material requirement/prototype gaps
 - `docs/skills/` for reusable prompts after repeated failures
@@ -129,7 +129,7 @@ Create a plan when the task has any of these traits:
 
 Skip a formal plan only for local low-risk edits such as copy changes, small styling fixes, test-only cleanups, and single-file behavior fixes with clear existing tests.
 
-All created plans MUST pass independent subagent or reviewer audit before implementation begins and again before the plan is marked complete. Protected areas, unresolved product risk, and source-of-truth conflicts require human/subagent review or stay open.
+All created plans MUST follow `docs/plans/00-plan-authoring-and-execution-guide.md` before implementation and closure. Protected areas, unresolved product risk, and source-of-truth conflicts require human/subagent review or stay open.
 
 ## Skill Usage Rule
 

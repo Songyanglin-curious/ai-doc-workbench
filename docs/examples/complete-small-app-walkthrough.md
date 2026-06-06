@@ -120,7 +120,7 @@ Example row:
 | P0 | User Management first slice | `docs/requirements/2026-05-21-user-management.md` | `docs/design/app-overview.md` | `docs/plans/2026-05-21-user-management-plan.md` | `ready` | `plan-first` | `none` |
 ```
 
-Because this slice changes auth-visible admin behavior and spans page, API, permissions, and tests, it is `plan-first` and requires independent plan and closure audit.
+Because this slice changes auth-visible admin behavior and spans page, API, permissions, and tests, it is `plan-first` and requires independent draft review plus independent closure audit.
 
 ## 5. Plan
 
@@ -131,7 +131,7 @@ Target file:
 ```md
 # User Management Plan
 
-> Plan Status: planned
+> Plan Status: proposed
 > Last Reviewed: 2026-05-21
 > Source: `docs/requirements/2026-05-21-user-management.md`
 > Audit: required
@@ -190,11 +190,10 @@ Exit Criteria:
 - [ ] affected owner docs updated or `No owner-doc update required`
 - [ ] `docs/logs/` updated
 
-## Plan Audit
+## Draft Review Record
 
-- Status: pending
-- Reviewer / Agent: `<independent reviewer or subagent>`
-- Evidence: `<audit file or task id>`
+- Independent draft review iteration 1: `needs revision` (`<task/session id>`) because `<why the first draft is not yet honest>`
+- Independent draft review iteration 2: `accept` (`<task/session id>`) after `<what changed in the plan>`
 
 ## Closure Gates
 
@@ -202,7 +201,7 @@ Exit Criteria:
 - [ ] relevant docs are aligned
 - [ ] verification has run (specify which commands; customize for visual/UX domains if needed)
 - [ ] no in-scope item downgraded to deferred/follow-up
-- [ ] plan audit passed before implementation
+- [ ] independent draft review completed and recorded
 - [ ] text consistency verified: status, phases, gates, and log all agree
 - [ ] closure audit was independent
 - [ ] closure evidence exists in files
@@ -213,12 +212,12 @@ None.
 
 ## Closure
 
-Status Note: complete only after plan and closure audits both pass.
+Status Note: complete only after independent draft review and closure audit both pass.
 
 Closure Audit Evidence:
 
 - Reviewer / Agent: `<independent reviewer or subagent>`
-- Evidence: `<task id / log link / audit file>`
+- Evidence: `<task id / log link / concise findings note>`
 
 Follow-up:
 
@@ -246,4 +245,6 @@ Target file:
 
 This slice has a plan and therefore needs closure audit before the plan is marked complete.
 
-Use a separate audit file if the audit is non-trivial, disputed, or useful for future sessions. Otherwise, record the independent reviewer/subagent evidence in the plan and daily log.
+Draft review should revise the plan directly and leave a short durable `Draft Review Record` in the plan. New plans normally start as `proposed` and move to `planned` only after independent draft review converges. Use a separate audit file only when the review is non-trivial, disputed, or useful for future sessions. Closure should always leave explicit `Closure Audit Evidence` in the plan and may also cite the daily log.
+
+The implementing agent's own closure note is not sufficient. The closure pass must come from an independent subagent or reviewer.
