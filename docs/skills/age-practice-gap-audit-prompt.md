@@ -99,10 +99,10 @@ Do not report a difference as a defect unless there is a concrete risk, such as:
 ## Step 4 - Write the analysis note to docs/analysis
 
 Create a dated analysis file at:
-- `docs/analysis/YYYY-MM-DD-age-practice-gap-audit.md`
+- `docs/analysis/YYYY-MM-DD-HHmm-age-practice-gap-audit.md`
 
 If a same-day file with that exact name already exists, append a short differentiator slug such as:
-- `docs/analysis/YYYY-MM-DD-age-practice-gap-audit-round-2.md`
+- `docs/analysis/YYYY-MM-DD-HHmm-age-practice-gap-audit-round-2.md`
 
 The file must contain these sections:
 

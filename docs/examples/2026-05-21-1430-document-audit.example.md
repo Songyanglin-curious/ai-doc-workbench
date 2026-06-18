@@ -1,11 +1,11 @@
 # Document Audit Example
 
-> Target Filename: `docs/audits/2026-05-21-document-audit-user-management.md`
+> Target Filename: `docs/audits/2026-05-21-1430-document-audit-user-management.md`
 
 ## Scope
 
 - `docs/input/source-pm-user-management.md`
-- `docs/requirements/2026-05-21-user-management.md`
+- `docs/requirements/2026-05-21-0900-user-management.md`
 - `docs/design/app-overview.md`
 
 ## Findings

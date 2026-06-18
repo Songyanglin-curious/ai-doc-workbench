@@ -10,6 +10,119 @@ This file is the template evolution record for stable reusable changes.
 
 ---
 
+## 2026-06-18: Simplify Planning Into Two Tiers And Add Reviewer-Availability Fallback
+
+### Context
+
+The plan rule had a sharp gap. Every created plan required independent draft review and closure audit, which was disproportionate for small low-risk multi-file changes. At the same time there was no documented fallback for solo or small teams that have no second reviewer, so agents either over-applied ceremony or silently skipped review without a recorded method.
+
+### Decision
+
+- Expanded the no-plan path so it also covers small low-risk multi-file edits (roughly 1 to 3 non-generated files, about 200 changed lines or fewer) that touch no contract, data/model, auth, permission, integration, deployment, cross-surface behavior, documentation conflict, or unresolved product risk.
+- Added a cold-replay verification requirement to the no-plan path: verify the change against the actual diff and the real verification commands and record a log entry; do not mark work complete from chat memory alone.
+- Added a Reviewer-Availability Fallback for created plans: when no second reviewer or subagent is available, a solo cold-replay pass is acceptable only for non-protected and non-high-risk plans, with the limitation recorded.
+- Updated the plan guide closure rule to require recording when a solo fallback was used.
+
+### Rationale
+
+This keeps two clean tiers (no-plan / full-plan) instead of an awkward middle layer, puts verification discipline where small changes actually happen rather than forcing ceremony on them, and gives small teams a pragmatic recorded path. Protected areas, unresolved product risk, and source-of-truth conflicts still require human or subagent review or stay open.
+
+### Consequences
+
+Copied projects get a proportionate default: trivial and small low-risk edits are fast but still verified against real commands, non-trivial work stays independently audited, and protected areas remain guarded.
+
+---
+
+## 2026-06-18: Add State Machine And Design Doc Audit Skills
+
+### Context
+
+The skill set covered document, plan, closure, code, and refactor audits, but lacked reusable methods for two recurring high-risk review types: verifying that a business state machine is internally correct and reachable, and verifying that design docs are a clean app-layer behavior baseline.
+
+### Decision
+
+- Added `docs/skills/state-machine-business-review-prompt.md`
+- Added `docs/skills/design-doc-audit-prompt.md`
+- Registered both in `docs/skills/README.md`
+
+### Rationale
+
+Workflow correctness and design-doc quality are the two places where subtle errors most often produce wrong implementation. Promoting them to reusable, routing-selected skills lets projects challenge these areas consistently instead of rediscovering the checklist each time.
+
+### Consequences
+
+Copied projects gain ready-made methods for the most common business-correctness and design-baseline audits, applicable to any workflow-heavy or multi-domain application without framework coupling.
+
+---
+
+## 2026-06-18: Add Optional Roadmap Layer To Backlog
+
+### Context
+
+The backlog was a flat work-item table. For larger projects this could not express phase-level progress, dependencies, or framework/platform reuse, so an AI had to re-walk the whole repo to know what was already done.
+
+### Decision
+
+- Added `docs/backlog/00-roadmap-authoring-guide.md`
+- Added `docs/backlog/implementation-roadmap.md` as a placeholder skeleton
+- Made the roadmap explicitly optional, with status transitions tied to the plan lifecycle (draft review -> `planned`, closure audit -> `done`)
+
+### Rationale
+
+A coarse-grained status index lets an AI or maintainer recover global progress from one file. Tying status transitions strictly to the plan lifecycle prevents premature `done` signals, and annotating framework/platform reuse prevents rebuilding existing capabilities.
+
+### Consequences
+
+Copied projects can scale backlog from a flat list to an orchestration layer when complexity justifies it, without forcing heavy process on small projects.
+
+---
+
+## 2026-06-18: Add Optional Design, Requirement, And Architecture Starter Skeletons
+
+### Context
+
+The template had starter files for app-overview, feature-inventory, and roles-permissions, but lacked skeletons for several recurring owner-doc shapes that multi-domain or integration-heavy projects need: a domain ownership map, a global flow overview, a product/first-loop baseline, API response conventions, and integration/transaction patterns.
+
+### Decision
+
+- Added `docs/design/domain-design-guidelines.md` (skeleton)
+- Added `docs/design/flow-overview.md` (skeleton)
+- Added `docs/requirements/product-baseline.md` (skeleton)
+- Added `docs/architecture/api-response-conventions.md` (optional skeleton)
+- Added `docs/architecture/integration-and-transaction-patterns.md` (optional skeleton)
+- Marked all of them optional / on-demand in `docs/index.md`, `START-HERE-after-copy.md`, and `README.md`
+
+### Rationale
+
+These skeletons capture proven owner-doc shapes for cross-domain ownership, global flow, formal product baselines, API hygiene, and external-integration safety. Providing them as optional placeholders lets projects adopt the right structure without inventing it, while the explicit on-demand labeling keeps small projects lean.
+
+### Consequences
+
+Copied projects get consistent, generic starting points for the most common advanced owner docs, and the template's minimal default path stays unchanged for projects that do not need them.
+
+---
+
+## 2026-06-18: Refine Archive Organization And Mature Playwright E2E Guide
+
+### Context
+
+The archive rule only said files keep their original relative name, with no predictable sub-structure, so archived material became hard to recover over time. The Playwright guide was strong on diagnostics but did not encode the operational pitfalls of running E2E alongside a development instance.
+
+### Decision
+
+- Added an Archive Organization section to `docs/references/document-naming-and-timeliness.md` (design/architecture by module or topic, plans under `YYYY-MM/`, other dated records by original relative path).
+- Added an Isolating The E2E Runtime section to `docs/references/playwright-e2e-guide.md`: isolated data source/port/profile, a `SKIP_WEBSERVER` mode for running against an already-running server, and a no-output troubleshooting checklist.
+
+### Rationale
+
+Predictable archive sub-structure keeps historical material recoverable as a project ages. Encoding the E2E operational pitfalls as defaults prevents each copied project from rediscovering datasource/port lock conflicts and silent startup failures.
+
+### Consequences
+
+Copied projects get a stable archive layout by default and a Playwright setup that coexists cleanly with a running development instance, reducing avoidable friction during local verification.
+
+---
+
 ## 2026-06-07: Converge Plan Workflow Toward Nop-Chaos-Flux Practice
 
 ### Context

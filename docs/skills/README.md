@@ -29,6 +29,8 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 | ----------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------- |
 | `age-practice-gap-audit-prompt.md`        | a repo needs comparison between live practice and intended AGE workflow            | the task is a local feature implementation    | AGE baseline docs, current repo structure, active docs, sampled live evidence | analysis note under `docs/analysis/` with prioritized gaps |
 | `document-audit-prompt.md`                | requirement, design, or architecture docs may be incomplete or inconsistent        | the task is trivial and local                 | target doc paths, relevant input or owner docs                               | audit findings and revision targets            |
+| `design-doc-audit-prompt.md`              | `docs/design/` needs revalidation as the app-layer behavior baseline               | a single narrower audit (state machine, plan) is what is needed | all `docs/design/` files, relevant requirement, `domain-design-guidelines.md` when present | severity-ordered findings and dispositions     |
+| `state-machine-business-review-prompt.md` | a workflow state machine (order/approval/dispute/lifecycle) needs correctness review | the change is trivial or unrelated to transitions | the owner doc defining the state machine, relevant requirement                 | P0–P3 findings, verdict, reachability/role/external summaries |
 | `plan-audit-prompt.md`                    | a non-trivial plan is ready for challenge before implementation                    | no plan exists yet                            | plan file, related requirement and owner docs                                | pass/fail audit with concrete issues           |
 | `closure-audit-prompt.md`                 | implementation claims completion and needs independent closure review              | work is still mid-flight                      | plan, verification evidence, relevant changed docs                           | closure verdict and remaining gaps             |
 | `requirement-gap-retrospective-prompt.md` | landed work still missed expectations and the requirement pipeline needs diagnosis | the requirement is still being drafted        | original input, requirement/discussion docs, delivered result                | retrospective findings and process corrections |
@@ -44,6 +46,8 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 
 - `age-practice-gap-audit-prompt.md`
 - `document-audit-prompt.md`
+- `design-doc-audit-prompt.md`
+- `state-machine-business-review-prompt.md`
 - `plan-audit-prompt.md`
 - `closure-audit-prompt.md`
 - `requirement-gap-retrospective-prompt.md`
@@ -54,3 +58,13 @@ Do not add broad business-scenario skills as a replacement for project-specific 
 - `code-quality-audit-prompt.md`
 - `code-refactor-discovery-prompt.md`
 - `code-refactor-prompt.md`
+
+## Relationship With Tool-Native Skills
+
+`docs/skills/` holds method- and audit-type skills that live inside the repository and stay portable across tools and editors. Some AI tools also support their own native skill loading (for example a project-local skills directory that the tool auto-loads). The two are complementary, not competing:
+
+- put reusable review/audit methods and prompts in `docs/skills/` so they are versioned with the docs and readable by any agent or human
+- put tool-loaded operational skills (framework-specific how-tos, codegen recipes, debug recipes) in the tool's own conventions if you use one
+- keep routing through `AGENTS.md`, `docs/index.md`, and owner docs regardless of where a skill physically lives; skills select the work method, they do not replace owner-doc routing
+
+The template itself stays tool-neutral and does not assume any specific AI tool.

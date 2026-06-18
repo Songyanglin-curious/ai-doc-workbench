@@ -95,6 +95,6 @@ Use `docs/skills/` for reusable prompt templates and `docs/logs/` for small audi
 
 Prefer dated filenames for audit records:
 
-- `docs/audits/YYYY-MM-DD-document-audit-topic.md`
-- `docs/audits/YYYY-MM-DD-draft-review-topic.md`
-- `docs/audits/YYYY-MM-DD-closure-audit-topic.md`
+- `docs/audits/YYYY-MM-DD-HHmm-document-audit-topic.md`
+- `docs/audits/YYYY-MM-DD-HHmm-draft-review-topic.md`
+- `docs/audits/YYYY-MM-DD-HHmm-closure-audit-topic.md`

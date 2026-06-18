@@ -1,6 +1,6 @@
 # Feature Requirement Example
 
-> Target Filename: `docs/requirements/2026-05-21-user-management.md`
+> Target Filename: `docs/requirements/2026-05-21-0900-user-management.md`
 
 ## Goal
 

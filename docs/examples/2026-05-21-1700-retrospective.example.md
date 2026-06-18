@@ -1,6 +1,6 @@
 # Retrospective Example
 
-> Target Filename: `docs/retrospectives/2026-05-21-checkout-prototype-gap.md`
+> Target Filename: `docs/retrospectives/2026-05-21-1700-checkout-prototype-gap.md`
 
 ## Summary
 

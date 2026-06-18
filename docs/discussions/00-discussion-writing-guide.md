@@ -27,4 +27,4 @@ Discussion files are for clarification, not final truth. Move settled conclusion
 
 Prefer dated filenames:
 
-- `docs/discussions/YYYY-MM-DD-topic.md`
+- `docs/discussions/YYYY-MM-DD-HHmm-topic.md`

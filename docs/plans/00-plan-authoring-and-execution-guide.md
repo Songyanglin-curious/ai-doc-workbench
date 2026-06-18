@@ -15,8 +15,6 @@ Write a plan when the task:
 - modifies more than 5 total files or is likely to exceed roughly 200 changed lines
 - needs staged implementation or explicit proof before closure
 
-Skip a formal plan only for local low-risk edits such as copy changes, small styling fixes, test-only cleanups, and single-file behavior fixes with clear existing tests.
-
 ## Plan Decision Table
 
 | Scope                                                                                                                               | Plan Level | Audit Rule                                                      | Examples                                                                               |
@@ -95,6 +93,7 @@ Before setting `Plan Status: completed`, do all of the following:
 4. Distinguish "interface exists" from "behavior is complete". Verify the actual runtime behavior with a test or demo, not just the type signature.
 5. Run the real verification commands for the repo. For plans whose primary result surface is visual, behavioral, or UX-driven, customize the verification gates with explicit justification in the plan.
 6. Perform an independent closure audit by an independent subagent or reviewer.
+7. If the plan used a solo cold-replay fallback (see `AGENTS.md` Reviewer-Availability Fallback), the closure record MUST state it was used and confirm the cold-replay self-check was performed against the plan, affected docs, the actual diff, and real verification commands.
 
 **Full closure** (multi-session, multi-module, or high-risk plans — add these):
 

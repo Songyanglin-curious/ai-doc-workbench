@@ -13,4 +13,4 @@ Use this directory for research, design tradeoffs, comparisons, and conclusions 
 
 Prefer dated filenames:
 
-- `docs/analysis/YYYY-MM-DD-topic.md`
+- `docs/analysis/YYYY-MM-DD-HHmm-topic.md`

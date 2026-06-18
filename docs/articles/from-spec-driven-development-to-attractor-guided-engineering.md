@@ -37,6 +37,8 @@ Flux/AGE is not centered on spec evolution. It is centered on attractor definiti
 
 ## Real Development History
 
+> The file paths below reference the source project's actual naming convention at the time (`YYYY-MM-DD`). For new projects using this template, use the naming convention in `docs/references/document-naming-and-timeliness.md` (`YYYY-MM-DD-HHmm`).
+
 "Architecture docs define the attractor" may sound like ordinary documentation governance at first. But if you look closely at the actual development records under `docs/logs/`, the difference becomes visible.
 
 For example, `docs/plans/371-deep-audit-2026-05-19-owner-routing-plan.md` is a typical entry point. It did not edit code directly. Instead, it converged the 64 retained findings from the `2026-05-19` deep audit into an owner-routing baseline. Every finding had a unique owner bucket, priority, successor plan, and owner-doc obligation. There was no ownerless issue, no multiply-owned issue, and no silent downgrade into a vague follow-up.

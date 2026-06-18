@@ -153,7 +153,7 @@ For created plans, independent draft review and closure audit are part of the de
 - `docs/index.md` - docs router and directory ownership baseline
 - `docs/articles/` - outward-facing methodology articles in English
 - `docs/context/` - mandatory AI context, source-of-truth precedence, and project-wide conventions
-- `docs/backlog/` - prioritized candidate work and AI autonomy labels for next actions
+- `docs/backlog/` - prioritized candidate work, AI autonomy labels for next actions, and an optional roadmap layer for phase-level progress
 - `docs/process/` - lightweight development workflow
 - `docs/input/` - raw PM, prototype, card-set, article, and external source material
 - `docs/discussions/` - multi-round clarification records for ambiguous requirements
@@ -170,6 +170,19 @@ For created plans, independent draft review and closure audit are part of the de
 - `docs/bugs/` - complex regression and root-cause note guide
 - `docs/analysis/` - research and design investigation notes
 - `docs/retrospectives/` - optional post-implementation gap analysis and process improvement notes
+
+## Optional Starter Skeletons
+
+These are on-demand owner-doc shapes for larger or integration-heavy projects. They ship as placeholder skeletons and should be adopted only when the project justifies them; small projects can ignore or delete them.
+
+- `docs/backlog/implementation-roadmap.md` (+ `00-roadmap-authoring-guide.md`) - coarse-grained phase index and global status surface
+- `docs/requirements/product-baseline.md` - product baseline and first complete loop
+- `docs/design/domain-design-guidelines.md` - domain-to-owner-doc ownership map
+- `docs/design/flow-overview.md` - global flow overview (macro flow, state machines, cross-domain rules)
+- `docs/architecture/api-response-conventions.md` - shared API response conventions
+- `docs/architecture/integration-and-transaction-patterns.md` - external-integration and transaction safety patterns
+
+The skills set also includes two audit methods for recurring high-risk review: `docs/skills/design-doc-audit-prompt.md` (design docs as app-layer baseline) and `docs/skills/state-machine-business-review-prompt.md` (business state machine correctness and reachability).
 
 ## Default Minimal Setup
 
@@ -210,7 +223,7 @@ The template follows the same basic split used by the existing systems:
 Examples:
 
 - stable: `docs/design/app-overview.md`, `docs/architecture/system-baseline.md`
-- dated: `docs/analysis/2026-05-21-topic.md`, `docs/discussions/2026-05-21-topic.md`, `docs/plans/2026-05-21-topic-plan.md`
+- dated: `docs/analysis/2026-05-21-0000-topic.md`, `docs/discussions/2026-05-21-0000-topic.md`, `docs/plans/2026-05-21-0000-topic-plan.md`
 - year-organized daily records: `docs/logs/YYYY/MM-DD.md`, `docs/testing/YYYY/MM-DD.md`
 
 See `docs/references/document-naming-and-timeliness.md`.

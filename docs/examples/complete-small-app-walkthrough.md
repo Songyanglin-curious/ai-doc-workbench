@@ -24,7 +24,7 @@ We do not need create/edit user profile in the first version.
 
 Target file:
 
-- `docs/requirements/2026-05-21-user-management.md`
+- `docs/requirements/2026-05-21-0900-user-management.md`
 
 ```md
 # User Management Requirement
@@ -117,7 +117,7 @@ Target file:
 Example row:
 
 ```md
-| P0 | User Management first slice | `docs/requirements/2026-05-21-user-management.md` | `docs/design/app-overview.md` | `docs/plans/2026-05-21-user-management-plan.md` | `ready` | `plan-first` | `none` |
+| P0 | User Management first slice | `docs/requirements/2026-05-21-0900-user-management.md` | `docs/design/app-overview.md` | `docs/plans/2026-05-21-1030-user-management-plan.md` | `ready` | `plan-first` | `none` |
 ```
 
 Because this slice changes auth-visible admin behavior and spans page, API, permissions, and tests, it is `plan-first` and requires independent draft review plus independent closure audit.
@@ -126,14 +126,14 @@ Because this slice changes auth-visible admin behavior and spans page, API, perm
 
 Target file:
 
-- `docs/plans/2026-05-21-user-management-plan.md`
+- `docs/plans/2026-05-21-1030-user-management-plan.md`
 
 ```md
 # User Management Plan
 
 > Plan Status: proposed
 > Last Reviewed: 2026-05-21
-> Source: `docs/requirements/2026-05-21-user-management.md`
+> Source: `docs/requirements/2026-05-21-0900-user-management.md`
 > Audit: required
 
 ## Current Baseline
@@ -235,7 +235,7 @@ Target file:
 
 ### 2026-05-21
 
-- Implemented first User Management slice from `docs/requirements/2026-05-21-user-management.md`.
+- Implemented first User Management slice from `docs/requirements/2026-05-21-0900-user-management.md`.
 - Added admin-only user list, name/email search, and disable action.
 - Updated `docs/design/app-overview.md` with the supported User Management surface.
 - Verification: `<real test command>` passed for user list/search/disable and non-admin access.

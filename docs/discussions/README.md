@@ -6,6 +6,6 @@ Start with `00-discussion-writing-guide.md`.
 
 Recommended filenames:
 
-- `2026-05-21-user-management-scope.md`
-- `2026-05-21-order-status-rules.md`
-- `2026-05-21-prototype-gap-checkout-flow.md`
+- `2026-05-21-0900-user-management-scope.md`
+- `2026-05-21-0900-order-status-rules.md`
+- `2026-05-21-0900-prototype-gap-checkout-flow.md`

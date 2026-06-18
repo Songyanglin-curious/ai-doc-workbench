@@ -60,75 +60,75 @@ Use dated naming for:
 
 ### Discussions
 
-- `docs/discussions/YYYY-MM-DD-topic.md`
+- `docs/discussions/YYYY-MM-DD-HHmm-topic.md`
 
 Examples:
 
-- `docs/discussions/2026-05-21-user-management-scope.md`
-- `docs/discussions/2026-05-21-order-status-rules.md`
-- `docs/discussions/2026-05-21-prototype-gap-checkout-flow.md`
+- `docs/discussions/2026-05-21-0000-user-management-scope.md`
+- `docs/discussions/2026-05-21-0000-order-status-rules.md`
+- `docs/discussions/2026-05-21-0000-prototype-gap-checkout-flow.md`
 
 ### Analysis
 
-- `docs/analysis/YYYY-MM-DD-topic.md`
+- `docs/analysis/YYYY-MM-DD-HHmm-topic.md`
 
 Examples:
 
-- `docs/analysis/2026-05-21-menu-structure-options.md`
-- `docs/analysis/2026-05-21-prototype-feasibility-review.md`
-- `docs/analysis/2026-05-21-auth-strategy-comparison.md`
+- `docs/analysis/2026-05-21-0000-menu-structure-options.md`
+- `docs/analysis/2026-05-21-0000-prototype-feasibility-review.md`
+- `docs/analysis/2026-05-21-0000-auth-strategy-comparison.md`
 
 ### Audits
 
-- `docs/audits/YYYY-MM-DD-<kind>-<topic>.md`
+- `docs/audits/YYYY-MM-DD-HHmm-<kind>-<topic>.md`
 
 Examples:
 
-- `docs/audits/2026-05-21-document-audit-user-management.md`
-- `docs/audits/2026-05-21-closure-audit-order-list.md`
+- `docs/audits/2026-05-21-0000-document-audit-user-management.md`
+- `docs/audits/2026-05-21-0000-closure-audit-order-list.md`
 
 Use `docs/audits/` only when the stored audit record is non-trivial, disputed, reusable, or likely to matter later. Created-plan draft review normally stays in the plan body, and closure evidence normally stays in the plan `## Closure` section.
 
 ### Retrospectives
 
-- `docs/retrospectives/YYYY-MM-DD-topic.md`
+- `docs/retrospectives/YYYY-MM-DD-HHmm-topic.md`
 
 Examples:
 
-- `docs/retrospectives/2026-05-21-checkout-prototype-gap.md`
-- `docs/retrospectives/2026-05-21-pm-handoff-missing-analysis.md`
+- `docs/retrospectives/2026-05-21-0000-checkout-prototype-gap.md`
+- `docs/retrospectives/2026-05-21-0000-pm-handoff-missing-analysis.md`
 
 ### Plans
 
 For small and medium projects, prefer a simple dated plan name:
 
-- `docs/plans/YYYY-MM-DD-topic-plan.md`
+- `docs/plans/YYYY-MM-DD-HHmm-topic-plan.md`
 
 Examples:
 
-- `docs/plans/2026-05-21-user-list-plan.md`
-- `docs/plans/2026-05-21-role-permission-alignment-plan.md`
+- `docs/plans/2026-05-21-0000-user-list-plan.md`
+- `docs/plans/2026-05-21-0000-role-permission-alignment-plan.md`
 
 If the project later accumulates many plans and needs stronger indexing, you may add a numeric prefix:
 
-- `docs/plans/NNN-YYYY-MM-DD-topic-plan.md`
+- `docs/plans/NNN-YYYY-MM-DD-HHmm-topic-plan.md`
 
 Examples:
 
-- `docs/plans/012-2026-05-21-user-list-plan.md`
-- `docs/plans/013-2026-05-21-checkout-validation-plan.md`
+- `docs/plans/012-2026-05-21-0000-user-list-plan.md`
+- `docs/plans/013-2026-05-21-0000-checkout-validation-plan.md`
 
 ### One-Off Requirement Synthesis Files
 
 If the file is a one-off slice rather than a stable baseline file, prefer a dated name:
 
-- `docs/requirements/YYYY-MM-DD-feature-name.md`
+- `docs/requirements/YYYY-MM-DD-HHmm-feature-name.md`
 
 Examples:
 
-- `docs/requirements/2026-05-21-user-management.md`
-- `docs/requirements/2026-05-21-order-refund-flow.md`
-- `docs/requirements/2026-05-21-dashboard-homepage.md`
+- `docs/requirements/2026-05-21-0000-user-management.md`
+- `docs/requirements/2026-05-21-0000-order-refund-flow.md`
+- `docs/requirements/2026-05-21-0000-dashboard-homepage.md`
 
 ## Bug Notes
 
@@ -137,12 +137,12 @@ Bug notes are historical, but they are usually referenced by issue identity rath
 For small and medium projects, either of these is acceptable:
 
 - `docs/bugs/01-short-bug-name.md`
-- `docs/bugs/YYYY-MM-DD-short-bug-name.md`
+- `docs/bugs/YYYY-MM-DD-HHmm-short-bug-name.md`
 
 Examples:
 
 - `docs/bugs/01-order-status-double-submit.md`
-- `docs/bugs/2026-05-21-login-token-refresh-loop.md`
+- `docs/bugs/2026-05-21-0000-login-token-refresh-loop.md`
 
 Recommendation:
 
@@ -154,6 +154,16 @@ Recommendation:
 - if the file answers "what is the current supported baseline?" -> stable name
 - if the file answers "what happened in this round / this day / this investigation?" -> dated name
 
+## Archive Organization
+
+When files are archived by human decision, keep a predictable sub-structure so historical material stays recoverable:
+
+- design and architecture docs: archive under `docs/archive/design/` and `docs/archive/architecture/`, organized by original module or topic name
+- dated plans: archive under `docs/archive/plans/YYYY-MM/`, grouped by the year and month of closure
+- other dated records (logs, bugs, audits, testing, analysis, retrospectives): keep their original relative path under `docs/archive/`
+
+Archived files keep their original relative name. Do not move files into or out of `docs/archive/` without human approval.
+
 ## Quick Copy Set
 
 Use these as ready-made patterns:
@@ -161,11 +171,11 @@ Use these as ready-made patterns:
 ```text
 docs/logs/2026/05-21.md
 docs/testing/2026/05-21.md
-docs/discussions/2026-05-21-user-management-scope.md
-docs/analysis/2026-05-21-auth-strategy-comparison.md
-docs/audits/2026-05-21-document-audit-user-management.md
-docs/plans/2026-05-21-user-list-plan.md
-docs/requirements/2026-05-21-order-refund-flow.md
-docs/retrospectives/2026-05-21-checkout-prototype-gap.md
+docs/discussions/2026-05-21-0900-user-management-scope.md
+docs/analysis/2026-05-21-1030-auth-strategy-comparison.md
+docs/audits/2026-05-21-1410-document-audit-user-management.md
+docs/plans/2026-05-21-1530-user-list-plan.md
+docs/requirements/2026-05-21-1100-order-refund-flow.md
+docs/retrospectives/2026-05-21-1630-checkout-prototype-gap.md
 docs/bugs/01-order-status-double-submit.md
 ```

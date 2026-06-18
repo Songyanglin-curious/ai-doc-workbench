@@ -1,6 +1,6 @@
 # Requirement Discussion Example
 
-> Target Filename: `docs/discussions/2026-05-21-user-management-scope.md`
+> Target Filename: `docs/discussions/2026-05-21-1000-user-management-scope.md`
 
 ## Source Inputs
 
@@ -37,5 +37,5 @@
 
 After confirmation, move settled conclusions into:
 
-- `docs/requirements/2026-05-21-user-management.md`
+- `docs/requirements/2026-05-21-0900-user-management.md`
 - `docs/design/app-overview.md`

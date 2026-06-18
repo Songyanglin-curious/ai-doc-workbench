@@ -24,4 +24,4 @@ Use `docs/retrospectives/` when the team needs to understand why a delivery stil
 
 Prefer dated filenames:
 
-- `docs/retrospectives/YYYY-MM-DD-topic.md`
+- `docs/retrospectives/YYYY-MM-DD-HHmm-topic.md`

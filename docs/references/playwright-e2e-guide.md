@@ -207,6 +207,36 @@ Key decisions:
 
 ---
 
+## Isolating The E2E Runtime
+
+When E2E tests run alongside a development instance, the two can clash over the same data source or file locks. Prefer to isolate the E2E runtime:
+
+- point E2E at an isolated data source (in-memory or throwaway database, or a separate schema)
+- use a dedicated port and profile for the E2E instance
+- let `webServer` start this isolated instance and wait for the port to be ready before running tests
+
+This avoids file/resource lock conflicts with whatever is already running in the development environment.
+
+### Running Against An Already-Running Server
+
+If the application is already running manually (for example, during interactive debugging), skip the auto-started `webServer`:
+
+```bash
+SKIP_WEBSERVER=1 BASE_URL=http://127.0.0.1:<port> npx playwright test
+```
+
+Implement this by gating `webServer` on the env var in `playwright.config.ts` (for example, define `webServer` only when `!process.env.SKIP_WEBSERVER`).
+
+### No Output For A Long Time After Launch
+
+If Playwright shows no output for a long time, the most common cause is that the application failed to start while Playwright is waiting for the port readiness check (up to `webServer.timeout`). Troubleshoot:
+
+1. Check whether another instance already holds the data source or file lock.
+2. Run the application start command manually with the E2E overrides and read the error.
+3. Confirm the runnable artifact is already built.
+
+---
+
 ## Recommended Diagnostic Workflow
 
 ```

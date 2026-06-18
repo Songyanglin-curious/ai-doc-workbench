@@ -127,7 +127,13 @@ Create a plan when the task has any of these traits:
 - needs staged execution or explicit closure gates
 - has unresolved product or technical risk that must not be hidden in chat
 
-Skip a formal plan only for local low-risk edits such as copy changes, small styling fixes, test-only cleanups, and single-file behavior fixes with clear existing tests.
+Skip a formal plan for low-risk edits: copy changes, small styling fixes, test-only cleanups, single-file behavior fixes with clear existing tests, AND small low-risk multi-file edits (roughly 1 to 3 non-generated files, about 200 changed lines or fewer) that touch no contract, data/model, auth, permission, integration, deployment, cross-surface behavior, documentation conflict, or unresolved product risk.
+
+Even without a formal plan, do not mark work complete from chat memory alone. Verify the change against the actual diff and the real verification commands, then record a log entry. This cold-replay check applies to the no-plan path too.
+
+### Reviewer-Availability Fallback
+
+When no second reviewer or subagent is available, a solo cold-replay pass is acceptable ONLY for plans that are non-protected and non-high-risk. The plan MUST record that it used a solo review and note the limitation. Protected areas, unresolved product risk, and source-of-truth conflicts still require human or subagent review, or stay open.
 
 All created plans MUST follow `docs/plans/00-plan-authoring-and-execution-guide.md` before implementation and closure. Protected areas, unresolved product risk, and source-of-truth conflicts require human/subagent review or stay open.
 

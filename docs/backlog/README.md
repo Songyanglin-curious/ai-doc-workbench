@@ -30,7 +30,7 @@ Agents may downgrade stale rows from `ready` to `needs-*` or `blocked` with evid
 Example ready row after setup:
 
 ```md
-| P0 | User Management first slice | `docs/requirements/2026-05-21-user-management.md` | `docs/design/app-overview.md` | `docs/plans/2026-05-21-user-management-plan.md` | `ready` | `plan-first` | `none` | `2026-05-21` |
+| P0 | User Management first slice | `docs/requirements/2026-05-21-0900-user-management.md` | `docs/design/app-overview.md` | `docs/plans/2026-05-21-1000-user-management-plan.md` | `ready` | `plan-first` | `none` | `2026-05-21` |
 ```
 
 ## Status Values

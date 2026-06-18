@@ -16,8 +16,8 @@ This preserves the distinction between raw input and settled requirement intent.
 - `product-scope.md`
 - `mvp.md`
 - `feature-001-<name>.md`
-- `2026-05-21-user-management.md`
-- `2026-05-21-order-refund-flow.md`
+- `2026-05-21-0900-user-management.md`
+- `2026-05-21-0900-order-refund-flow.md`
 
 Recommendation:
 
